@@ -2,8 +2,18 @@
 const navList = document.querySelector('.nav_list');
 
 // 打开/关闭
-function showMenu()  { navList.classList.add('open'); }
-function hideMenu()  { navList.classList.remove('open'); }
+function showMenu() {
+  const open = navList.classList.toggle('open');
+  document.querySelector('.mobile-toggle')?.setAttribute('aria-expanded', String(open));
+}
+function hideMenu() {
+  navList.classList.remove('open');
+  document.querySelector('.mobile-toggle')?.setAttribute('aria-expanded', 'false');
+}
+navList.querySelectorAll('a').forEach(link => link.addEventListener('click', hideMenu));
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') hideMenu();
+});
 
 // 点击菜单外自动关闭（可选）
 // document.addEventListener('click', e => {
