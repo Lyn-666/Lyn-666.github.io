@@ -3,12 +3,12 @@
 
 <nav class="navbar">
   <div class="container">
-    <span class="mobile-toggle" onclick="showMenu()">☰</span>
+    <button type="button" class="mobile-toggle" onclick="showMenu()" aria-label="Toggle navigation" aria-controls="navLinks" aria-expanded="false" style="background: transparent; border: 0; color: inherit; font: inherit; cursor: pointer;">☰</button>
     <ul class="nav_list" id="navLinks">
       {{ macros.nav_link('home',        'HOME',        active=='home') }}
       {{ macros.nav_link('about',       'ABOUT',       active=='about') }}
       {{ macros.nav_link('research',    'RESEARCH',    active=='research') }}
-      {{ macros.nav_link('news',        'NEWS',        active=='news') }}
+      {{ macros.nav_link('news',        'TEACHING & HONORS',        active=='news') }}
       {{ macros.nav_link('publications','PUBLICATIONS',active=='publications') }}
       {{ macros.nav_link('contact',     'CONTACT',     active=='contact') }}
     </ul>

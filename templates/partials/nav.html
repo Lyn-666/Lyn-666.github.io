@@ -2,13 +2,13 @@
 <nav class="navbar">
   <div class="container">
     <!-- 手机端汉堡 -->
-    <div class="mobile-toggle" onclick="showMenu()">☰</div>
+    <button type="button" class="mobile-toggle" onclick="showMenu()" aria-label="Toggle navigation" aria-controls="navLinks" aria-expanded="false" style="background: transparent; border: 0; color: inherit; font: inherit; cursor: pointer;">☰</button>
     <!-- 正常的导航列表 -->
-    <ul class="nav_list">
+    <ul class="nav_list" id="navLinks">
       <li><a href="{{ url_for('home') }}" class="nav_link{% if active=='home' %} active{% endif %}">HOME</a></li>
       <li><a href="{{ url_for('about') }}" class="nav_link{% if active=='about' %} active{% endif %}">ABOUT</a></li>
       <li><a href="{{ url_for('research') }}" class="nav_link{% if active=='research' %} active{% endif %}">RESEARCH</a></li>
-      <li><a href="{{ url_for('news') }}" class="nav_link{% if active=='news' %} active{% endif %}">NEWS</a></li>
+      <li><a href="{{ url_for('news') }}" class="nav_link{% if active=='news' %} active{% endif %}">TEACHING &amp; HONORS</a></li>
       <li><a href="{{ url_for('publications') }}" class="nav_link{% if active=='publications' %} active{% endif %}">PUBLICATIONS</a></li>
       <li><a href="{{ url_for('contact') }}" class="nav_link{% if active=='contact' %} active{% endif %}">CONTACT</a></li>
     </ul>
