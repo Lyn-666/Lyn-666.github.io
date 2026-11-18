@@ -1,5 +1,5 @@
 # app.py
-from flask import Flask, render_template
+from flask import Flask, render_template, send_from_directory
 from datetime import datetime
 
 app = Flask(__name__)
@@ -13,7 +13,7 @@ def inject_now():
 # Homepage
 @app.route('/')
 def home():
-    return render_template('home.html', active='home')
+    return send_from_directory(app.root_path, 'index.html')
 
 # About Me (lynn.html)
 @app.route('/about')
